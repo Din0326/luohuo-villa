@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<!--
+================================================================
+  樂活Villa － 羽過天輕 ｜ v2.0（實景照片版）
+  · 所有照片已壓縮輸出至 images/ 資料夾
+  · 尚需補上：獨棟雙人房價格
+  · 換自有網域時，記得同步改 og:image 的網址
+  · LINE：https://line.me/R/ti/p/@042ssvpw
+================================================================
+-->
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>樂活Villa－羽過天輕｜宜蘭五結包棟民宿．冬山河親水公園旁</title>
+<meta name="description" content="宜蘭五結包棟Villa，稻田環繞，步行可達冬山河親水公園。歡唱KTV、戶外戲水池、烤肉區、電動麻將、寬敞廚房。主棟6間可住18人，亦可單間預訂。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="樂活Villa－羽過天輕｜宜蘭五結包棟民宿">
+<meta property="og:description" content="老民宿，新靈魂。把整棟留給您。">
+<meta property="og:image" content="https://din0326.github.io/luohuo-villa/images/hero.jpg">
+<meta name="theme-color" content="#FBFCFC">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%232F6B76%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-size=%2718%27 font-family=%27sans-serif%27 font-weight=%27700%27 fill=%27%23fff%27 text-anchor=%27middle%27%3E%E7%BE%BD%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/hero.jpg" media="(min-width:701px)">
+<link rel="preload" as="image" href="images/hero-sm.jpg" media="(max-width:700px)">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LodgingBusiness","name":"樂活Villa－羽過天輕","telephone":"+886918020222","email":"ggyy6140@gmail.com","checkinTime":"15:00","checkoutTime":"11:00","petsAllowed":"僅限小型犬2隻，另收清潔費","address":{"@type":"PostalAddress","streetAddress":"協和村公園一路86號","addressLocality":"五結鄉","addressRegion":"宜蘭縣","postalCode":"268","addressCountry":"TW"}}
+</script>
+<style>
+:root{
+  --snow:#FBFCFC; --foam:#EDF5F6; --sky:#DDEAEC; --wave:#7FB0B8;
+  --deep:#2F6B76; --deep-dk:#245660; --night:#1D2A2C; --grey:#7C8A8C;
+  --sans:"Noto Sans TC",-apple-system,sans-serif;
+  --gut:clamp(20px,5vw,64px); --sec:clamp(70px,9.5vw,132px); --r:20px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--snow);color:var(--night);font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.9;letter-spacing:.02em;overflow-x:hidden}
+body.lock{overflow:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:.02em;line-height:1.4}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:var(--gut)}
+
+/* ---------- NAV ---------- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px var(--gut);transition:background .4s,padding .4s,box-shadow .4s}
+.nav.solid{background:rgba(251,252,252,.94);backdrop-filter:blur(14px);padding-block:11px;box-shadow:0 2px 20px rgba(47,107,118,.1)}
+.nav__brand{font-size:17px;font-weight:700;letter-spacing:.06em;color:#fff;transition:color .4s;position:relative;z-index:2}
+.nav.solid .nav__brand{color:var(--deep)}
+.nav__links{display:flex;gap:4px;list-style:none;margin:0;padding:0;font-size:14px;font-weight:500}
+.nav__links a{color:#fff;padding:7px 12px;border-radius:999px;transition:background .25s,color .4s}
+.nav.solid .nav__links a{color:var(--night)}
+.nav__links a:hover{background:rgba(255,255,255,.22)}
+.nav.solid .nav__links a:hover{background:var(--foam);color:var(--deep)}
+.burger{display:none;width:42px;height:42px;padding:0;border:0;background:none;cursor:pointer;position:relative;z-index:2}
+.burger span{position:absolute;left:11px;width:20px;height:2px;background:#fff;border-radius:2px;transition:transform .3s,opacity .25s,background .4s}
+.burger span:nth-child(1){top:15px}
+.burger span:nth-child(2){top:21px}
+.burger span:nth-child(3){top:27px}
+.nav.solid .burger span,.nav.open .burger span{background:var(--deep)}
+.nav.open .burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.nav.open .burger span:nth-child(2){opacity:0}
+.nav.open .burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+@media(max-width:1040px){
+  .burger{display:block}
+  .nav__links{position:fixed;inset:0 0 auto 0;flex-direction:column;gap:0;background:rgba(251,252,252,.985);backdrop-filter:blur(16px);padding:74px 0 14px;box-shadow:0 12px 34px rgba(47,107,118,.16);transform:translateY(-102%);transition:transform .38s cubic-bezier(.4,0,.2,1);font-size:16px}
+  .nav.open .nav__links{transform:none}
+  .nav__links li{border-top:1px solid var(--sky)}
+  .nav__links a,.nav.solid .nav__links a{display:block;color:var(--night);padding:14px var(--gut);border-radius:0}
+  .nav.open .nav__brand{color:var(--deep)}
+}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;color:#fff}
+.hero__bg{position:absolute;inset:0;background:#16101C}
+.hero__bg img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.1s ease}
+.hero__bg img.on{opacity:1}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(12,18,26,.74),rgba(12,18,26,.28) 62%,rgba(12,18,26,.5));pointer-events:none}
+.hero__in{position:relative;z-index:3;width:100%;padding:96px var(--gut) 132px;max-width:1180px;margin:0 auto}
+.hero__eb{display:inline-block;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.34);padding:7px 18px;border-radius:999px;font-size:13px;font-weight:500;letter-spacing:.1em;margin-bottom:24px}
+.hero h1{font-size:clamp(40px,8.2vw,80px);line-height:1.2;margin-bottom:18px;text-shadow:0 2px 34px rgba(0,0,0,.45)}
+.hero__sub{font-size:clamp(15px,2.4vw,19px);font-weight:500;letter-spacing:.1em;margin-bottom:10px;opacity:.96}
+.hero__tag{font-size:14px;letter-spacing:.16em;opacity:.85;margin-bottom:32px}
+.hero__cta{display:flex;gap:12px;flex-wrap:wrap}
+.wave{position:absolute;bottom:-1px;left:0;width:100%;z-index:2;display:block;fill:var(--snow)}
+
+/* ---------- BUTTONS ---------- */
+.btn{display:inline-flex;align-items:center;gap:9px;padding:15px 32px;border-radius:999px;font-size:15px;font-weight:500;border:2px solid transparent;cursor:pointer;transition:background .25s,color .25s,border-color .25s,transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn--fill{background:var(--deep);color:#fff}
+.btn--fill:hover{background:var(--deep-dk)}
+.btn--glass{background:rgba(255,255,255,.16);backdrop-filter:blur(6px);border-color:rgba(255,255,255,.55);color:#fff}
+.btn--glass:hover{background:#fff;color:var(--deep);border-color:#fff}
+.btn--out{border-color:var(--deep);color:var(--deep)}
+.btn--out:hover{background:var(--deep);color:#fff}
+
+/* ---------- SECTION BASE ---------- */
+.sec{padding-block:var(--sec)}
+.sec--foam{background:var(--foam)}
+.sec__eb{display:inline-block;background:var(--sky);color:var(--deep);font-size:13px;font-weight:500;letter-spacing:.14em;padding:6px 16px;border-radius:999px;margin-bottom:18px}
+.sec--foam .sec__eb{background:#fff}
+.sec h2{font-size:clamp(26px,4.4vw,40px);margin-bottom:24px;line-height:1.42;text-wrap:balance}
+.lead{font-size:clamp(15px,2.1vw,17.5px);line-height:2.1;color:#3F5153;max-width:980px;text-wrap:pretty}
+.lead+.lead{margin-top:18px}
+.note{font-size:13px;color:var(--grey);line-height:1.95}
+.tbd{display:inline-block;background:#FFF2D9;color:#8A6412;border:1px dashed #E0B95E;border-radius:6px;padding:1px 9px;font-size:.86em}
+
+/* ---------- PHOTO TILE ---------- */
+.tile{position:relative;margin:0;overflow:hidden;border-radius:var(--r);background:var(--sky);cursor:zoom-in}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.4,0,.2,1)}
+.tile:hover img{transform:scale(1.05)}
+.tile figcaption{position:absolute;inset:auto 0 0 0;padding:46px 18px 15px;font-size:13.5px;font-weight:500;color:#fff;letter-spacing:.04em;text-shadow:0 1px 6px rgba(8,16,20,.75),0 0 22px rgba(8,16,20,.5);background:linear-gradient(to top,rgba(10,20,24,.86) 0%,rgba(10,20,24,.55) 42%,rgba(10,20,24,0) 100%);pointer-events:none}
+.tile::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(47,107,118,.1);border-radius:var(--r);pointer-events:none}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+.stat{background:#fff;border-radius:16px;padding:22px 18px;text-align:center;box-shadow:0 2px 14px rgba(47,107,118,.07)}
+.stat b{display:block;font-size:28px;color:var(--deep);line-height:1.2}
+.stat span{font-size:13px;color:var(--grey)}
+@media(max-width:700px){.stats{gap:8px}.stat{padding:18px 8px}.stat b{font-size:21px}.stat span{font-size:12px}}
+
+.about__pics{margin-top:44px;display:grid;grid-template-columns:1.45fr 1fr;gap:16px}
+.about__pics .tile:nth-child(1){aspect-ratio:4/3}
+.about__pics .tile:nth-child(2){aspect-ratio:3/4}
+@media(max-width:760px){.about__pics{grid-template-columns:1fr 1fr;gap:10px}.about__pics .tile:nth-child(1),.about__pics .tile:nth-child(2){aspect-ratio:3/4}}
+
+/* ---------- AMENITIES ---------- */
+.amen{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+.amen__i{background:#fff;border-radius:var(--r);padding:32px 20px;text-align:center;box-shadow:0 2px 18px rgba(47,107,118,.07);transition:transform .25s,box-shadow .25s}
+.amen__i:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(47,107,118,.14)}
+.amen__i .ic{width:56px;height:56px;margin:0 auto 14px;border-radius:50%;background:var(--sky);display:flex;align-items:center;justify-content:center}
+.amen__i svg{width:26px;height:26px;stroke:var(--deep);fill:none;stroke-width:1.4}
+.amen__i b{display:block;font-size:16px;font-weight:700;margin-bottom:4px}
+.amen__i span{font-size:13px;color:var(--grey)}
+@media(max-width:760px){.amen{grid-template-columns:repeat(2,1fr);gap:12px}.amen__i{padding:24px 12px}}
+
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+.strip .tile{aspect-ratio:1}
+@media(max-width:860px){.strip{grid-template-columns:repeat(2,1fr);gap:10px}}
+
+/* ---------- FLOORS ---------- */
+.floor+.floor{margin-top:clamp(48px,6vw,78px)}
+.floor__h{display:flex;align-items:flex-start;gap:20px;margin-bottom:22px}
+.floor__n{flex:0 0 auto;width:58px;height:58px;border-radius:50%;background:var(--deep);color:#fff;font-size:17px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sec--foam .floor__n{background:#fff;color:var(--deep)}
+.floor__h h3{font-size:clamp(18px,2.6vw,22px);margin-bottom:3px}
+.floor__h p{margin:0;font-size:14px;color:var(--grey);line-height:1.85;text-wrap:pretty}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(4,1fr)}
+.grid .tile{aspect-ratio:1}
+.grid .tile--wide{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+.grid--3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:820px){
+  .grid,.grid--3{grid-template-columns:repeat(2,1fr);gap:10px}
+  .grid .tile--wide{grid-column:span 2;grid-row:auto;aspect-ratio:16/10}
+  .floor__h{gap:14px}
+  .floor__n{width:48px;height:48px;font-size:15px}
+}
+
+/* ---------- ROOMS ---------- */
+.rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.room{background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:0 2px 18px rgba(47,107,118,.07);transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
+.room:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(47,107,118,.15)}
+.room__b{padding:22px 24px 26px;flex:1;display:flex;flex-direction:column}
+.room h3{font-size:19px;margin-bottom:4px}
+.room .cap{font-size:13px;color:var(--deep);font-weight:500;margin-bottom:14px}
+.room ul{list-style:none;margin:0 0 16px;padding:0;font-size:14px;color:var(--grey);line-height:2}
+.room .prices{display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap}
+.room .prices span{background:var(--foam);border-radius:8px;padding:6px 11px;font-size:12.5px;color:#3F5153}
+.room .prices b{color:var(--deep);font-weight:700}
+.room .btn{margin-top:auto;align-self:flex-start}
+@media(max-width:960px){.rooms{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.rooms{grid-template-columns:1fr}}
+
+.carousel{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--sky)}
+.carousel .track{display:flex;height:100%;transition:transform .42s cubic-bezier(.4,0,.2,1)}
+.carousel .slide{flex:0 0 100%;height:100%;position:relative;cursor:zoom-in}
+.carousel .slide img{width:100%;height:100%;object-fit:cover}
+.carousel .cnt{position:absolute;top:10px;right:10px;z-index:3;background:rgba(14,26,30,.55);color:#fff;font-size:11.5px;letter-spacing:.06em;padding:3px 10px;border-radius:999px;backdrop-filter:blur(4px)}
+.cbtn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:38px;height:38px;border:0;border-radius:50%;background:rgba(255,255,255,.88);color:var(--deep);font-size:22px;line-height:1;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.16);opacity:0;transition:opacity .25s,background .2s}
+.cbtn:hover{background:#fff}
+.cbtn.prev{left:10px}
+.cbtn.next{right:10px}
+.carousel:hover .cbtn,.carousel:focus-within .cbtn{opacity:1}
+@media(hover:none){.cbtn{opacity:.9}}
+.carousel.single .cbtn,.carousel.single .dots,.carousel.single .cnt{display:none}
+.dots{position:absolute;bottom:11px;left:0;right:0;z-index:3;display:flex;justify-content:center;gap:6px}
+.dots button{width:7px;height:7px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.55);cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.3);transition:background .2s,width .2s}
+.dots button.on{background:#fff;width:18px;border-radius:999px}
+
+/* ---------- RATES ---------- */
+.tier{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:36px 0 8px}
+.tier div{background:#fff;border-radius:16px;padding:20px 22px;box-shadow:0 2px 14px rgba(47,107,118,.06);border-left:5px solid var(--wave)}
+.sec--foam .tier div{border-left-color:var(--deep)}
+.tier b{display:block;font-size:16px;margin-bottom:6px;color:var(--deep)}
+.tier p{margin:0;font-size:13.5px;line-height:1.95;color:#3F5153}
+@media(max-width:760px){.tier{grid-template-columns:1fr;gap:10px}}
+
+.rate{background:#fff;border-radius:var(--r);overflow:hidden;margin-top:26px;box-shadow:0 2px 18px rgba(47,107,118,.07)}
+.rate table{width:100%;border-collapse:collapse;font-size:15px}
+.rate th,.rate td{padding:16px 18px;text-align:left}
+.rate thead{background:var(--deep);color:#fff}
+.rate th{font-weight:500;font-size:14px;letter-spacing:.05em}
+.rate tbody tr+tr td{border-top:1px solid var(--sky)}
+.rate td:not(:first-child),.rate th:not(:first-child){text-align:right}
+.rate .num{font-weight:700;color:var(--deep)}
+@media(max-width:620px){.rate table{font-size:13.5px}.rate th,.rate td{padding:13px 11px}}
+
+.pkg{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:26px}
+.pkg div{background:#fff;border-radius:var(--r);padding:26px 24px;text-align:center;box-shadow:0 2px 18px rgba(47,107,118,.07)}
+.pkg div.hi{border:2px solid var(--deep)}
+.pkg span{display:block;font-size:14px;color:var(--grey);margin-bottom:8px}
+.pkg b{display:block;font-size:30px;color:var(--deep);line-height:1.2}
+.pkg em{display:block;font-style:normal;font-size:12.5px;color:var(--grey);margin-top:6px}
+@media(max-width:760px){.pkg{grid-template-columns:1fr;gap:12px}}
+
+.fees{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:26px}
+.fee{background:#fff;border-radius:16px;padding:20px 24px;box-shadow:0 2px 14px rgba(47,107,118,.06);display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+.fee span{font-size:15px}
+.fee b{color:var(--deep);white-space:nowrap;font-size:15px}
+@media(max-width:700px){.fees{grid-template-columns:1fr;gap:10px}}
+
+.promo{background:var(--deep);color:#fff;border-radius:var(--r);padding:28px 32px;margin-top:26px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.promo h4{font-size:19px;margin-bottom:5px}
+.promo p{margin:0;font-size:14px;color:#C7E0E4}
+.promo em{font-style:normal;font-size:34px;font-weight:700;white-space:nowrap}
+
+/* ---------- AROUND / MAP / FAQ ---------- */
+.spots{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;list-style:none;margin:38px 0 0;padding:0}
+.spots li{background:#fff;border-radius:16px;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:0 2px 14px rgba(47,107,118,.06)}
+.spots b{font-size:16px;font-weight:500}
+.spots em{font-style:normal;font-size:13px;font-weight:500;color:var(--deep);background:var(--sky);padding:5px 13px;border-radius:999px;white-space:nowrap}
+@media(max-width:700px){.spots{grid-template-columns:1fr}}
+
+.map{aspect-ratio:16/9;margin-top:32px;border-radius:var(--r);overflow:hidden;box-shadow:0 2px 18px rgba(47,107,118,.1)}
+.map iframe{width:100%;height:100%;border:0;display:block}
+.mapbtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+@media(max-width:620px){.map{aspect-ratio:4/3}.mapbtns .btn{flex:1;justify-content:center;padding-inline:16px}}
+
+.acc{margin-top:32px;display:grid;gap:10px}
+.acc__w{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 14px rgba(47,107,118,.06)}
+.acc__q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:18px;background:none;border:0;padding:20px 24px;text-align:left;cursor:pointer;font-family:inherit;font-size:16px;font-weight:500;color:var(--night)}
+.acc__q:hover{color:var(--deep)}
+.acc__q i{font-style:normal;font-size:20px;font-weight:400;color:var(--wave);transition:transform .3s;line-height:1}
+.acc__q[aria-expanded="true"]{color:var(--deep)}
+.acc__q[aria-expanded="true"] i{transform:rotate(45deg)}
+.acc__a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.acc__a>div{padding:0 24px 24px;font-size:14.5px;line-height:2.05;color:#3F5153}
+.acc__a ul{margin:0;padding-left:20px}
+.acc__a li{margin-bottom:4px}
+
+.rules{background:#fff;border-radius:var(--r);padding:26px 30px;margin-top:20px;box-shadow:0 2px 18px rgba(47,107,118,.07);border-left:5px solid #D96A5B}
+.rules h4{font-size:17px;margin-bottom:12px;color:#C0503F}
+.rules ul{margin:0;padding-left:20px;font-size:14.5px;line-height:2.05;color:#3F5153}
+
+/* ---------- END / FOOTER ---------- */
+.end{position:relative;color:#fff;text-align:center;padding-block:clamp(80px,11vw,132px);overflow:hidden;background:var(--deep)}
+.end__bg{position:absolute;inset:0;z-index:0}
+.end__bg img{width:100%;height:100%;object-fit:cover}
+.end::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(rgba(23,60,68,.87),rgba(23,60,68,.91))}
+.end .wrap{position:relative;z-index:2}
+.end h2{font-size:clamp(25px,4.6vw,42px);margin-bottom:14px}
+.end p{color:#D2E7EA;margin:0 0 34px;font-size:15px}
+.end__cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.end .btn--fill{background:#fff;color:var(--deep)}
+.end .btn--fill:hover{background:var(--sky)}
+.end .btn--glass{border-color:rgba(255,255,255,.6)}
+
+.foot{background:var(--night);color:#8FA3A6;padding:46px var(--gut) 116px;font-size:13px;line-height:2.1}
+.foot__in{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.foot b{display:block;color:#fff;font-size:16px;font-weight:700;margin-bottom:10px}
+.foot a:hover{color:#fff}
+@media(min-width:1041px){.foot{padding-bottom:46px}}
+.fc{display:inline-flex;align-items:center;gap:8px;margin-top:5px;line-height:1.9;transition:color .2s}
+.fc:hover{color:#fff}
+.fc img,.fc svg{width:18px;height:18px;flex:0 0 18px;border-radius:4px;display:block}
+.fc__i{border-radius:0;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;opacity:.75}
+.fc:hover .fc__i{opacity:1}
+.foot__in>div{display:flex;flex-direction:column;align-items:flex-start}
+
+.bar{position:fixed;inset:auto 0 0 0;z-index:99;display:none;gap:10px;padding:10px 14px 14px;background:linear-gradient(to top,var(--snow) 65%,transparent)}
+.bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:15px 8px;border-radius:999px;font-size:15px;font-weight:500;background:#fff;color:var(--deep);border:2px solid var(--deep);box-shadow:0 4px 18px rgba(47,107,118,.18)}
+.bar a+a{background:var(--deep);color:#fff}
+.bar svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6}
+@media(max-width:1040px){.bar{display:flex}}
+
+/* ---------- LIGHTBOX ---------- */
+.lb{position:fixed;inset:0;z-index:200;display:none;background:rgba(10,18,21,.96);backdrop-filter:blur(3px)}
+.lb.on{display:block}
+.lb__fig{position:absolute;inset:56px 16px 108px;display:flex;align-items:center;justify-content:center}
+.lb__fig img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:8px;box-shadow:0 18px 60px rgba(0,0,0,.5)}
+.lb__cap{position:absolute;inset:auto 0 24px 0;margin:0;text-align:center;line-height:1.6;color:#DCE9EB;font-size:14px;letter-spacing:.05em;padding-inline:60px}
+.lb__cap small{display:block;color:#7C8A8C;font-size:12px;margin-top:2px}
+.lb__x{position:absolute;top:14px;right:14px;width:44px;height:44px;border:0;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;font-size:24px;line-height:1;cursor:pointer;transition:background .2s}
+.lb__x:hover{background:rgba(255,255,255,.26)}
+.lb__nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border:0;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;font-size:26px;line-height:1;cursor:pointer;transition:background .2s}
+.lb__nav:hover{background:rgba(255,255,255,.26)}
+.lb__nav.p{left:14px}
+.lb__nav.n{right:14px}
+@media(max-width:620px){.lb__fig{inset:52px 8px 122px}.lb__nav{width:40px;height:40px;font-size:22px}.lb__cap{padding-inline:20px;font-size:13px}}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+:focus-visible{outline:3px solid var(--wave);outline-offset:2px}
+/* 中文斷行：手機用 pretty，平板以上用 balance（讓斷點落在標點後，不留一兩字的尾巴）*/
+@media(min-width:480px){.lead,.floor__h p{text-wrap:balance}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}.hero__bg img{opacity:1}}
+</style>
+</head>
+<body>
+<!-- ANALYTICS_HERE -->
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top">樂活Villa</a>
+  <nav><ul class="nav__links" id="navlinks">
+    <li><a href="#about">關於</a></li><li><a href="#amenities">設施</a></li><li><a href="#spaces">空間</a></li>
+    <li><a href="#rooms">房型</a></li><li><a href="#rates">房價</a></li><li><a href="#grounds">園區</a></li>
+    <li><a href="#location">交通</a></li><li><a href="#info">訂房須知</a></li>
+  </ul></nav>
+  <button class="burger" id="burger" aria-label="開啟選單" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero__bg">
+    <picture>
+      <source media="(max-width:700px)" srcset="images/hero-sm.jpg">
+      <img src="images/hero.jpg" alt="樂活Villa 羽過天輕 夜晚打燈的戲水池與水牆" width="2000" height="1125" fetchpriority="high" onload="this.classList.add('on')">
+    </picture>
+  </div>
+  <div class="hero__in">
+    <span class="hero__eb">宜蘭 · 五結 · 包棟 Villa</span>
+    <h1>老民宿，<br>新靈魂。</h1>
+    <p class="hero__sub">樂活Villa － 羽過天輕</p>
+    <p class="hero__tag">放慢步調 · 享受生活 · 輕鬆度假</p>
+    <div class="hero__cta">
+      <a class="btn btn--fill" href="https://line.me/R/ti/p/@042ssvpw">私訊訂房</a>
+      <a class="btn btn--glass" href="#rates">看房價</a>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 42c180-34 340 22 520 22s300-46 470-46 270 40 450 30v32H0z"/></svg>
+</section>
+
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="rv">
+      <span class="sec__eb">關於我們</span>
+      <h2>把整棟留給您，<br>把美好的回憶帶回家。</h2>
+      <p class="lead">坐落於宜蘭五結的田園之間，四周是綠油油的稻田。1000 坪的腹地，讓大人放鬆、孩子奔跑，都有餘裕。</p>
+      <p class="lead">走出大門，步行約 15 分鐘就能抵達冬山河親水公園——童玩節期間不必開車、不必找車位。傳藝中心也在一公里內。</p>
+      <p class="lead">整棟包下或單間預訂都可以。家族聚會、好友旅行、公司團體、親子度假，這裡的時間屬於你們自己。</p>
+    </div>
+    <div class="stats rv">
+      <div class="stat"><b>18</b><span>主棟可住人數</span></div>
+      <div class="stat"><b>8</b><span>停車位</span></div>
+      <div class="stat"><b>1000</b><span>坪園區</span></div>
+    </div>
+    <div class="about__pics rv">
+      <figure class="tile"><img src="images/about-pool.jpg" alt="戶外戲水池，後方為稻田景色" loading="lazy" width="1500" height="1126" data-lb data-cap="戶外戲水池" data-sub="池畔就是一整片稻田"><figcaption>戲水池／後方即是稻田</figcaption></figure>
+      <figure class="tile"><img src="images/about-drive.jpg" alt="園區內的椰林車道" loading="lazy" width="1126" height="1500" data-lb data-cap="椰林車道" data-sub="1000 坪腹地，車子直接停到門口"><figcaption>1000 坪園區與椰林車道</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--foam" id="amenities">
+  <div class="wrap"><div class="rv">
+    <span class="sec__eb">設施</span>
+    <h2>一整棟的娛樂，<br>不用跟別人排隊。</h2>
+    <p class="lead">從白天玩到深夜，都在同一個屋簷下。</p>
+    <div class="amen">
+      <div class="amen__i"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"/><path d="M19 11a7 7 0 0 1-14 0M12 18v3"/></svg></div><b>歡唱 KTV</b><span>大螢幕投影，客廳就是包廂</span></div>
+      <div class="amen__i"><div class="ic"><svg viewBox="0 0 24 24"><path d="M2 16c1.8 0 1.8 1.4 3.6 1.4S7.4 16 9.2 16s1.8 1.4 3.6 1.4S14.6 16 16.4 16 18.2 17.4 20 17.4 21.8 16 22 16"/><path d="M2 20.5c1.8 0 1.8 1.4 3.6 1.4s1.8-1.4 3.6-1.4 1.8 1.4 3.6 1.4 1.8-1.4 3.6-1.4 1.8 1.4 3.6 1.4S21.8 20.5 22 20.5"/><path d="M8 13V4a2 2 0 1 1 4 0M16 13V4a2 2 0 1 1 4 0"/></svg></div><b>戶外戲水池</b><span>前後各一池，夏日消暑</span></div>
+      <div class="amen__i"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 15h16M6 15a6 6 0 0 1 12 0M6 19h12"/><path d="M9 7c0-1 1-1.4 1-2.4S9 3 9 3M13 7c0-1 1-1.4 1-2.4S13 3 13 3"/></svg></div><b>烤肉區</b><span>食材自備．押金 $2,000</span></div>
+      <div class="amen__i"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.1"/><circle cx="15" cy="14" r="1.1"/><path d="M3 12h18"/></svg></div><b>電動麻將</b><span>自動洗牌，戰到天亮</span></div>
+      <div class="amen__i"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20V9h14v11"/><path d="M8 9V5a4 4 0 0 1 8 0v4M12 13v3"/></svg></div><b>寬敞廚房</b><span>開放式中島與長餐桌</span></div>
+      <div class="amen__i"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12.5a10 10 0 0 1 14 0M8 15.8a5.6 5.6 0 0 1 8 0M2 9.2a15 15 0 0 1 20 0"/><circle cx="12" cy="19" r="1"/></svg></div><b>免費 Wi-Fi</b><span>全棟覆蓋</span></div>
+    </div>
+    <div class="strip">
+      <figure class="tile"><img src="images/fun-ktv.jpg" alt="客廳大螢幕投影 KTV" loading="lazy" width="1500" height="1125" data-lb data-cap="歡唱 KTV" data-sub="客廳大螢幕投影，音響設備齊全"><figcaption>歡唱 KTV</figcaption></figure>
+      <figure class="tile"><img src="images/fun-mahjong.jpg" alt="電動麻將桌" loading="lazy" width="1500" height="1125" data-lb data-cap="電動麻將桌" data-sub="自動洗牌，四人成局"><figcaption>電動麻將</figcaption></figure>
+      <figure class="tile"><img src="images/fun-switch.jpg" alt="Nintendo Switch 遊戲與麥克風設備" loading="lazy" width="1500" height="1125" data-lb data-cap="Switch 遊戲" data-sub="大電視接 Switch，全家一起玩"><figcaption>Switch 遊戲</figcaption></figure>
+      <figure class="tile"><img src="images/fun-books.jpg" alt="窗邊書櫃與繪本閱讀角" loading="lazy" width="1125" height="1500" data-lb data-cap="圖書繪本角" data-sub="窗邊的沙發與書牆，孩子的秘密基地"><figcaption>圖書繪本角</figcaption></figure>
+    </div>
+  </div></div>
+</section>
+
+<section class="sec" id="spaces">
+  <div class="wrap">
+    <div class="rv">
+      <span class="sec__eb">空間巡禮</span>
+      <h2>三個樓層，<br>各有各的待法。</h2>
+      <p class="lead">一樓熱鬧、二樓安靜、三樓留給想一個人發呆的時候。走上走下，總有你的位置。</p>
+    </div>
+
+    <div class="floor rv">
+      <div class="floor__h">
+        <span class="floor__n">1F</span>
+        <div><h3>客廳・餐廚・公共衛浴</h3><p>全開放的公共空間，投影、麻將、遊戲機都在這一層。落地窗外就是稻田。</p></div>
+      </div>
+      <div class="grid">
+        <figure class="tile tile--wide"><img src="images/f1-living-2.jpg" alt="一樓客廳全景，挑高天花板與吊燈" loading="lazy" width="1500" height="1125" data-lb data-cap="一樓客廳" data-sub="沙發、麻將桌、投影幕都在同一個空間"><figcaption>一樓客廳全景</figcaption></figure>
+        <figure class="tile"><img src="images/f1-living-1.jpg" alt="客廳沙發與大電視" loading="lazy" width="1500" height="1125" data-lb data-cap="客廳休憩區" data-sub="大電視、音響與大片採光"><figcaption>客廳休憩區</figcaption></figure>
+        <figure class="tile"><img src="images/f1-kitchen.jpg" alt="開放式廚房與長餐桌" loading="lazy" width="1500" height="1125" data-lb data-cap="廚房與餐廳" data-sub="木梁天花、開放式廚房與長餐桌"><figcaption>廚房與餐廳</figcaption></figure>
+        <figure class="tile"><img src="images/f1-bath.jpg" alt="一樓公用衛浴，海豚馬賽克磚" loading="lazy" width="1500" height="1125" data-lb data-cap="一樓公用衛浴" data-sub="乾濕分離，馬賽克磚拼貼"><figcaption>一樓公用衛浴</figcaption></figure>
+        <figure class="tile"><img src="images/fun-books.jpg" alt="一樓窗邊閱讀角" loading="lazy" width="1125" height="1500" data-lb data-cap="窗邊閱讀角" data-sub="書牆與單人沙發"><figcaption>窗邊閱讀角</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="floor rv">
+      <div class="floor__h">
+        <span class="floor__n">2F</span>
+        <div><h3>交誼廳・樓梯轉角</h3><p>整排單人沙發的白色空間，適合開會、聊天，或是把小孩放生的下午。</p></div>
+      </div>
+      <div class="grid grid--3">
+        <figure class="tile"><img src="images/f2-lounge-1.jpg" alt="二樓交誼廳，整排白色單人沙發" loading="lazy" width="1500" height="1126" data-lb data-cap="二樓交誼廳" data-sub="整排單人沙發，大片落地窗採光"><figcaption>二樓交誼廳</figcaption></figure>
+        <figure class="tile"><img src="images/f2-lounge-2.jpg" alt="二樓座位區一角" loading="lazy" width="1500" height="1126" data-lb data-cap="二樓座位區" data-sub="老件木櫃與掛畫"><figcaption>二樓座位區</figcaption></figure>
+        <figure class="tile"><img src="images/f2-stair.jpg" alt="二樓樓梯口的木櫃與掛畫" loading="lazy" width="1126" height="1500" data-lb data-cap="二樓樓梯口" data-sub="上樓後的第一個轉角，老木櫃與掛畫"><figcaption>樓梯轉角</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="floor rv">
+      <div class="floor__h">
+        <span class="floor__n">3F</span>
+        <div><h3>靜謐角落</h3><p>最安靜的一層。兩張藤椅、一盞光，適合一杯咖啡或一本沒讀完的書。</p></div>
+      </div>
+      <div class="grid grid--3">
+        <figure class="tile"><img src="images/f3-seat.jpg" alt="三樓藤編座位區與掛畫" loading="lazy" width="1500" height="1126" data-lb data-cap="三樓座位區" data-sub="藤椅、掛畫，最安靜的角落"><figcaption>三樓座位區</figcaption></figure>
+        <figure class="tile"><img src="images/f3-decor.jpg" alt="三樓樓梯旁的相框牆與紅色電話亭" loading="lazy" width="1126" height="1500" data-lb data-cap="三樓擺飾" data-sub="樓梯旁的相框牆與紅色電話亭"><figcaption>角落擺飾</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--foam" id="rooms">
+  <div class="wrap"><div class="rv">
+    <span class="sec__eb">房型</span>
+    <h2>主棟 6 間，可住 18 人</h2>
+    <p class="lead">主棟為雙人房 3 間、四人房 3 間，每間皆為獨立衛浴。另有獨棟雙人房，費用另計，不包含在包棟方案內。</p>
+    <div class="rooms">
+
+      <article class="room">
+        <div class="carousel" data-carousel>
+          <div class="track">
+            <div class="slide"><img src="images/dbl-a-1.jpg" alt="雙人房 橘色主牆與大床" loading="lazy" width="1500" height="1126" data-lb data-cap="雙人房" data-sub="橘色主牆、木地板，一大床"></div>
+            <div class="slide"><img src="images/dbl-b-1.jpg" alt="雙人房 木地板與大床" loading="lazy" width="1500" height="1126" data-lb data-cap="雙人房" data-sub="落地窗採光，實木床架"></div>
+            <div class="slide"><img src="images/dbl-c-1.jpg" alt="雙人房 米色系房間" loading="lazy" width="1126" height="1500" data-lb data-cap="雙人房" data-sub="米色系，安靜好眠"></div>
+            <div class="slide"><img src="images/dbl-b-2.jpg" alt="雙人房 單人沙發與立燈角落" loading="lazy" width="1126" height="1500" data-lb data-cap="雙人房 休憩角" data-sub="單人沙發與立燈"></div>
+            <div class="slide"><img src="images/dbl-a-2.jpg" alt="雙人房 造型壁爐櫃與掛畫" loading="lazy" width="1126" height="1500" data-lb data-cap="雙人房 一角" data-sub="造型壁爐櫃與掛畫"></div>
+            <div class="slide"><img src="images/dbl-bath-1.jpg" alt="雙人房 木質洗手台衛浴" loading="lazy" width="1126" height="1500" data-lb data-cap="雙人房 衛浴" data-sub="木質洗手台，乾濕分離"></div>
+            <div class="slide"><img src="images/dbl-bath-3.jpg" alt="雙人房 現代灰調衛浴" loading="lazy" width="1500" height="1126" data-lb data-cap="雙人房 衛浴" data-sub="灰調石材與造景"></div>
+            <div class="slide"><img src="images/dbl-bath-2.jpg" alt="雙人房 拱門與淋浴間" loading="lazy" width="1126" height="1500" data-lb data-cap="雙人房 衛浴" data-sub="拱門入口，獨立淋浴間"></div>
+          </div>
+          <span class="cnt"></span>
+          <button class="cbtn prev" aria-label="上一張">&#8249;</button><button class="cbtn next" aria-label="下一張">&#8250;</button>
+          <div class="dots"></div>
+        </div>
+        <div class="room__b">
+          <h3>雙人房</h3>
+          <p class="cap">2 人 · 主棟共 3 間</p>
+          <ul><li>床型：一大床</li><li>衛浴：獨立衛浴．乾濕分離</li><li>備品：冷氣．冰箱．吹風機</li></ul>
+          <div class="prices"><span>平日 <b>$2,800</b></span><span>假日 <b>$3,300</b></span></div>
+          <a class="btn btn--out" href="https://line.me/R/ti/p/@042ssvpw" style="padding:11px 24px;font-size:14px">詢問空房</a>
+        </div>
+      </article>
+
+      <article class="room">
+        <div class="carousel" data-carousel>
+          <div class="track">
+            <div class="slide"><img src="images/quad-b-1.jpg" alt="四人房 木梁天花與兩大床" loading="lazy" width="1500" height="1126" data-lb data-cap="四人房" data-sub="木梁天花、兩大床，空間寬敞"></div>
+            <div class="slide"><img src="images/quad-a-1.jpg" alt="四人房 紅磚主牆與兩大床" loading="lazy" width="1500" height="1126" data-lb data-cap="四人房" data-sub="紅磚主牆，日式和風調性"></div>
+            <div class="slide"><img src="images/quad-c-1.jpg" alt="四人房 綠色主牆與兩大床" loading="lazy" width="1500" height="1126" data-lb data-cap="四人房" data-sub="綠色主牆，另附沙發區"></div>
+            <div class="slide"><img src="images/quad-b-2.jpg" alt="四人房 內附沙發與電視的起居區" loading="lazy" width="1500" height="1126" data-lb data-cap="四人房 起居區" data-sub="房內就有沙發與電視"></div>
+            <div class="slide"><img src="images/quad-c-2.jpg" alt="四人房 綠色沙發休憩區" loading="lazy" width="1126" height="1500" data-lb data-cap="四人房 休憩區" data-sub="房內附設沙發座位"></div>
+            <div class="slide"><img src="images/quad-b-3.jpg" alt="四人房 洗手台與衣櫃" loading="lazy" width="1500" height="1126" data-lb data-cap="四人房 衛浴" data-sub="獨立洗手台與衣櫃"></div>
+            <div class="slide"><img src="images/quad-b-5.jpg" alt="四人房 淋浴間" loading="lazy" width="1126" height="1500" data-lb data-cap="四人房 衛浴" data-sub="乾濕分離淋浴間"></div>
+            <div class="slide"><img src="images/quad-c-3.jpg" alt="四人房 磚紅色調衛浴" loading="lazy" width="1126" height="1500" data-lb data-cap="四人房 衛浴" data-sub="磚紅色調，獨立淋浴間"></div>
+            <div class="slide"><img src="images/quad-a-2.jpg" alt="四人房 淋浴空間" loading="lazy" width="1500" height="1126" data-lb data-cap="四人房 衛浴" data-sub="大面淋浴空間"></div>
+            <div class="slide"><img src="images/quad-b-4.jpg" alt="四人房 備品櫃與掛畫" loading="lazy" width="1126" height="1500" data-lb data-cap="四人房 備品" data-sub="毛巾備品與掛畫"></div>
+          </div>
+          <span class="cnt"></span>
+          <button class="cbtn prev" aria-label="上一張">&#8249;</button><button class="cbtn next" aria-label="下一張">&#8250;</button>
+          <div class="dots"></div>
+        </div>
+        <div class="room__b">
+          <h3>四人房</h3>
+          <p class="cap">4 人 · 主棟共 3 間</p>
+          <ul><li>床型：兩大床</li><li>衛浴：獨立衛浴．乾濕分離</li><li>部分房型附設沙發起居區</li></ul>
+          <div class="prices"><span>平日 <b>$4,800</b></span><span>假日 <b>$5,300</b></span></div>
+          <a class="btn btn--out" href="https://line.me/R/ti/p/@042ssvpw" style="padding:11px 24px;font-size:14px">詢問空房</a>
+        </div>
+      </article>
+
+      <article class="room">
+        <div class="carousel" data-carousel>
+          <div class="track">
+            <div class="slide"><img src="images/out-annex.jpg" alt="獨棟雙人房外觀" loading="lazy" width="1126" height="1500" data-lb data-cap="獨棟雙人房" data-sub="與主棟分開的獨立小屋"></div>
+            <div class="slide"><img src="images/out-door-night.jpg" alt="夜晚的門口與暖燈" loading="lazy" width="1126" height="1500" data-lb data-cap="夜晚門口" data-sub="入夜後的暖燈玄關"></div>
+          </div>
+          <span class="cnt"></span>
+          <button class="cbtn prev" aria-label="上一張">&#8249;</button><button class="cbtn next" aria-label="下一張">&#8250;</button>
+          <div class="dots"></div>
+        </div>
+        <div class="room__b">
+          <h3>獨棟雙人房</h3>
+          <p class="cap">2 人 · 獨立小屋．不含於包棟</p>
+          <ul><li>床型：一大床</li><li>衛浴：獨立衛浴</li><li>與主棟分離，安靜獨立</li></ul>
+          <div class="prices"><span><span class="tbd">價格請洽詢</span></span></div>
+          <a class="btn btn--out" href="https://line.me/R/ti/p/@042ssvpw" style="padding:11px 24px;font-size:14px">詢問空房</a>
+        </div>
+      </article>
+
+    </div>
+    <p class="note" style="margin-top:22px">＊房間陳設依實際入住安排為準，照片為各房型實景拍攝。</p>
+  </div></div>
+</section>
+
+<section class="sec" id="rates">
+  <div class="wrap"><div class="rv">
+    <span class="sec__eb">房價</span>
+    <h2>房價一覽</h2>
+
+    <div class="tier">
+      <div><b>平日</b><p>週日～週四入住</p></div>
+      <div><b>假日</b><p>週五、週六入住<br>連續假日<br>（過年期間價格另計）</p></div>
+    </div>
+
+    <h3 style="margin-top:44px;font-size:20px">單間預訂</h3>
+    <div class="rate"><table>
+      <thead><tr><th>房型</th><th>平日</th><th>假日</th></tr></thead>
+      <tbody>
+        <tr><td>雙人房</td><td class="num">$2,800</td><td class="num">$3,300</td></tr>
+        <tr><td>四人房</td><td class="num">$4,800</td><td class="num">$5,300</td></tr>
+        <tr><td>獨棟雙人房</td><td colspan="2" style="text-align:right"><span class="tbd">價格請洽詢</span></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 style="margin-top:44px;font-size:20px">包棟預訂</h3>
+    <p class="note" style="margin-bottom:4px">主棟 6 間全室使用．可住 18 人．不含獨棟雙人房</p>
+    <div class="pkg">
+      <div class="hi"><span>平日包棟</span><b>$16,000</b><em>10 人</em></div>
+      <div><span>假日包棟</span><b>$30,000</b><em>18 人</em></div>
+    </div>
+    <p class="note" style="margin-top:14px">＊特殊節日、連續假期及春節期間價格另行公告</p>
+
+    <h3 style="margin-top:44px;font-size:20px">其他收費</h3>
+    <div class="fees">
+      <div class="fee"><span>加床（單人床，限 1 張）</span><b>$800 / 晚</b></div>
+      <div class="fee"><span>烤肉場地押金</span><b>$2,000</b></div>
+      <div class="fee"><span>寵物清潔費（限小型犬 2 隻）</span><b>$500 / 隻</b></div>
+      <div class="fee"><span>清潔保證金（退房後退還）</span><b>$5,000</b></div>
+    </div>
+
+    <div class="promo">
+      <div><h4>連住優惠</h4><p>假日入住，第 2 晚起</p></div>
+      <em>9 折</em>
+    </div>
+  </div></div>
+</section>
+
+<section class="sec sec--foam" id="grounds">
+  <div class="wrap"><div class="rv">
+    <span class="sec__eb">園區與戶外</span>
+    <h2>1000 坪的院子，<br>從白天到夜裡都好看。</h2>
+    <p class="lead">前後各一座戲水池、烤肉區、椰林車道，還有一整片會隨季節換色的稻田。</p>
+    <div class="grid" style="margin-top:40px">
+      <figure class="tile tile--wide"><img src="images/out-cover.jpg" alt="白色建築、椰林與車道全景" loading="lazy" width="960" height="720" data-lb data-cap="園區全景" data-sub="白色主棟、椰林車道與大片草地"><figcaption>園區全景</figcaption></figure>
+      <figure class="tile"><img src="images/out-pool-night.jpg" alt="夜間打燈的戲水池與水牆" loading="lazy" width="1500" height="1126" data-lb data-cap="夜間戲水池" data-sub="水牆打燈，入夜後的另一種樣子"><figcaption>夜間戲水池</figcaption></figure>
+      <figure class="tile"><img src="images/about-pool.jpg" alt="白天的後戲水池" loading="lazy" width="1500" height="1126" data-lb data-cap="後戲水池" data-sub="白天的池畔，後方就是稻田"><figcaption>後戲水池</figcaption></figure>
+      <figure class="tile"><img src="images/out-pool-front.jpg" alt="前庭戲水池與造景" loading="lazy" width="1126" height="1500" data-lb data-cap="前庭戲水池" data-sub="石砌造景，孩子最愛的一池"><figcaption>前庭戲水池</figcaption></figure>
+      <figure class="tile"><img src="images/out-bbq.jpg" alt="半戶外烤肉區" loading="lazy" width="1126" height="1500" data-lb data-cap="戶外烤肉區" data-sub="半戶外，下雨天也烤得成"><figcaption>戶外烤肉區</figcaption></figure>
+      <figure class="tile"><img src="images/out-facade.jpg" alt="主棟建築外觀" loading="lazy" width="1126" height="1500" data-lb data-cap="主棟外觀" data-sub="地中海風格的白色建築"><figcaption>主棟外觀</figcaption></figure>
+      <figure class="tile"><img src="images/out-sunset.jpg" alt="椰子樹剪影與火燒雲夕陽" loading="lazy" width="1126" height="1500" data-lb data-cap="園區夕陽" data-sub="椰子樹剪影與火燒雲"><figcaption>園區夕陽</figcaption></figure>
+      <figure class="tile"><img src="images/out-field.jpg" alt="民宿旁的稻田風景" loading="lazy" width="1500" height="1126" data-lb data-cap="鄰田景色" data-sub="推開窗就是這片田"><figcaption>鄰田景色</figcaption></figure>
+      <figure class="tile"><img src="images/out-drive.jpg" alt="椰林車道與石板小徑" loading="lazy" width="1126" height="1500" data-lb data-cap="椰林車道" data-sub="8 個停車位，車子開到門口"><figcaption>椰林車道</figcaption></figure>
+      <figure class="tile"><img src="images/out-palm.jpg" alt="園區內大棵椰子樹與圍牆" loading="lazy" width="1126" height="1500" data-lb data-cap="園區綠意" data-sub="老椰子樹與棚架"><figcaption>園區綠意</figcaption></figure>
+      <figure class="tile"><img src="images/out-annex.jpg" alt="獨棟小屋外觀" loading="lazy" width="1126" height="1500" data-lb data-cap="獨棟小屋" data-sub="獨棟雙人房，安靜獨立"><figcaption>獨棟小屋</figcaption></figure>
+      <figure class="tile"><img src="images/out-door-night.jpg" alt="夜晚的主棟門口" loading="lazy" width="1126" height="1500" data-lb data-cap="夜晚門口" data-sub="回家的那盞燈"><figcaption>夜晚門口</figcaption></figure>
+    </div>
+  </div></div>
+</section>
+
+<section class="sec" id="around">
+  <div class="wrap"><div class="rv">
+    <span class="sec__eb">周邊景點</span>
+    <h2>玩宜蘭，<br>從這裡出發最近。</h2>
+    <ul class="spots">
+      <li><b>冬山河親水公園</b><em>步行 15 分鐘</em></li>
+      <li><b>國立傳統藝術中心</b><em>開車 3 分鐘</em></li>
+      <li><b>利澤簡老街</b><em>開車 4 分鐘</em></li>
+      <li><b>虎牌米粉觀光工廠</b><em>開車 6 分鐘</em></li>
+      <li><b>綠舞日式主題園區</b><em>開車 10 分鐘</em></li>
+      <li><b>羅東夜市</b><em>開車 15 分鐘</em></li>
+    </ul>
+    <p class="note" style="margin-top:18px">＊車程時間為概估，實際依交通狀況而定。</p>
+  </div></div>
+</section>
+
+<section class="sec sec--foam" id="location">
+  <div class="wrap"><div class="rv">
+    <span class="sec__eb">交通</span>
+    <h2>怎麼來</h2>
+    <p class="lead">宜蘭縣五結鄉協和村公園一路86號　·　停車位 8 個</p>
+    <div class="map">
+      <iframe src="https://maps.google.com/maps?q=268%E5%AE%9C%E8%98%AD%E7%B8%A3%E4%BA%94%E7%B5%90%E9%84%89%E5%85%AC%E5%9C%92%E4%B8%80%E8%B7%AF86%E8%99%9F&z=16&hl=zh-TW&output=embed"
+        title="樂活Villa－羽過天輕 位置地圖" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen></iframe>
+    </div>
+    <div class="mapbtns">
+      <a class="btn btn--out" href="https://www.google.com/maps/dir/?api=1&destination=268%E5%AE%9C%E8%98%AD%E7%B8%A3%E4%BA%94%E7%B5%90%E9%84%89%E5%85%AC%E5%9C%92%E4%B8%80%E8%B7%AF86%E8%99%9F" target="_blank" rel="noopener">開始導航</a>
+      <a class="btn btn--out" href="https://www.google.com/maps/search/?api=1&query=268%E5%AE%9C%E8%98%AD%E7%B8%A3%E4%BA%94%E7%B5%90%E9%84%89%E5%85%AC%E5%9C%92%E4%B8%80%E8%B7%AF86%E8%99%9F" target="_blank" rel="noopener">在 Google 地圖開啟</a>
+    </div>
+  </div></div>
+</section>
+
+<section class="sec" id="info">
+  <div class="wrap"><div class="rv">
+    <span class="sec__eb">訂房須知</span>
+    <h2>訂房前，先確認這些</h2>
+
+    <div class="rules">
+      <h4>請務必留意</h4>
+      <ul>
+        <li><b>入住 15:00　退房 隔日 11:00</b>　為維護住宿品質，房務需要足夠時間整理，恕無法提早入住。</li>
+        <li>恕不提供提前進入放置行李，亦不代冰食材。</li>
+        <li>嚴禁施放煙火、搭設戶外音響，違規者可拒絕入住。</li>
+      </ul>
+    </div>
+
+    <div class="acc">
+      <div class="acc__w"><button class="acc__q" aria-expanded="false">訂金與付款 <i>＋</i></button><div class="acc__a"><div>
+        訂金依成交金額：<br>
+        · $25,000 以上 → 訂金 $10,000<br>
+        · $25,000 以下 → 訂金 $5,000<br><br>
+        訂房確認後，我們會透過 LINE 提供匯款資訊。
+      </div></div></div>
+
+      <div class="acc__w"><button class="acc__q" aria-expanded="false">取消與延期 <i>＋</i></button><div class="acc__a"><div>
+        <ul>
+          <li>取消預訂：訂金扣除 $5,000 作業手續費。</li>
+          <li>延期：訂金扣除 $2,000，僅接受一年內延期。</li>
+          <li>退款若非同一銀行，將收取匯款手續費。</li>
+        </ul>
+      </div></div></div>
+
+      <div class="acc__w"><button class="acc__q" aria-expanded="false">烤肉區使用規範 <i>＋</i></button><div class="acc__a"><div>
+        <ul>
+          <li>食材需自備，不提供代訂與代冰。</li>
+          <li>押金 $2,000，退房前完成清潔整理可全額退還。</li>
+          <li>未整理則不退還押金。</li>
+        </ul>
+      </div></div></div>
+
+      <div class="acc__w"><button class="acc__q" aria-expanded="false">環境維護與保證金退還 <i>＋</i></button><div class="acc__a"><div>
+        以下事項皆配合者，保證金於三日內退還指定帳戶：
+        <ul>
+          <li>室內外設施若移動請歸位。</li>
+          <li>烤肉區使用後恢復原狀。</li>
+          <li>垃圾請分類集中置於垃圾袋。</li>
+          <li>廚房廚具、鍋具、餐具使用後清洗歸位。</li>
+        </ul>
+      </div></div></div>
+
+      <div class="acc__w"><button class="acc__q" aria-expanded="false">加床與人數 <i>＋</i></button><div class="acc__a"><div>
+        <ul>
+          <li>主棟可住 18 人（雙人房 3 間、四人房 3 間）。</li>
+          <li>加床：僅提供單人床 1 張，$800／晚。</li>
+          <li>獨棟雙人房費用另計，不包含於包棟方案。</li>
+        </ul>
+      </div></div></div>
+
+      <div class="acc__w"><button class="acc__q" aria-expanded="false">寵物規定 <i>＋</i></button><div class="acc__a"><div>
+        <ul>
+          <li>僅接受小型犬，上限 2 隻。</li>
+          <li>清潔費 $500／隻。</li>
+          <li>寵物不可上床、不可上沙發。</li>
+        </ul>
+      </div></div></div>
+    </div>
+  </div></div>
+</section>
+
+<section class="end">
+  <div class="end__bg"><img src="images/out-sunset.jpg" alt="" aria-hidden="true" loading="lazy" width="1126" height="1500"></div>
+  <div class="wrap rv">
+    <h2>不只是住一晚，<br>是留下一段值得回味的旅行。</h2>
+    <p>歡迎包棟、家族旅遊、好友聚會、公司團體預約。</p>
+    <div class="end__cta">
+      <a class="btn btn--fill" href="https://line.me/R/ti/p/@042ssvpw">LINE 私訊訂房</a>
+      <a class="btn btn--glass" href="tel:+886918020222">撥打 0918-020-222</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot__in">
+    <div><b>樂活Villa － 羽過天輕</b>宜蘭縣五結鄉協和村公園一路86號<br>民宿登記證：宜蘭縣民宿 619 號</div>
+    <div><b>聯絡</b>
+      <a class="fc" href="tel:+886918020222"><svg class="fc__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>0918-020-222</a>
+      <a class="fc" href="https://line.me/R/ti/p/@042ssvpw" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#06C755"/><path fill="#fff" d="M19.4 10.8c0-3.3-3.3-6-7.4-6s-7.4 2.7-7.4 6c0 2.9 2.6 5.4 6.2 5.9.24.05.56.16.64.36.07.19.05.47.02.66l-.1.62c-.03.18-.15.72.63.39s4.2-2.47 5.73-4.24c1.06-1.16 1.65-2.34 1.65-3.69z"/></svg>LINE ＠042ssvpw</a>
+      <a class="fc" href="mailto:ggyy6140@gmail.com"><svg class="fc__i" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3.5 6.5l8.5 6 8.5-6"/></svg>ggyy6140@gmail.com</a>
+    </div>
+    <div><b>追蹤</b>
+      <a class="fc" href="https://www.facebook.com/profile.php?id=61591478087913" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#1877F2"/><path fill="#fff" d="M15.6 12.5l.4-2.8h-2.7V7.9c0-.8.4-1.5 1.6-1.5H16V4c-.7-.1-1.5-.2-2.2-.2-2.3 0-3.8 1.4-3.8 3.9v2H7.6v2.8H10V20h3.3v-7.5h2.3z"/></svg>Facebook</a>
+    </div>
+  </div>
+  <div class="foot__in" style="margin-top:34px;font-size:12px;opacity:.6"><span>© 2026 樂活Villa － 羽過天輕</span></div>
+</footer>
+
+<div class="bar">
+  <a href="tel:+886918020222"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>撥打電話</a>
+  <a href="https://line.me/R/ti/p/@042ssvpw"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.6 9.6 0 0 1-2.6-.4L4 21l1.4-4.1A8.2 8.2 0 0 1 3 11.5C3 6.8 7 3 12 3s9 3.8 9 8.5z"/></svg>LINE 訂房</a>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="照片檢視">
+  <div class="lb__fig"><img id="lbimg" alt=""></div>
+  <p class="lb__cap"><span id="lbcap"></span><small id="lbsub"></small></p>
+  <button class="lb__x" id="lbx" aria-label="關閉">&#215;</button>
+  <button class="lb__nav p" id="lbp" aria-label="上一張">&#8249;</button>
+  <button class="lb__nav n" id="lbn" aria-label="下一張">&#8250;</button>
+</div>
+
+<script>
+/* ---- nav ---- */
+var nav=document.getElementById('nav'),burger=document.getElementById('burger');
+function s(){nav.classList.toggle('solid',window.scrollY>60)}
+window.addEventListener('scroll',s,{passive:true});s();
+burger.addEventListener('click',function(){
+  var open=nav.classList.toggle('open');
+  burger.setAttribute('aria-expanded',open?'true':'false');
+  burger.setAttribute('aria-label',open?'關閉選單':'開啟選單');
+});
+document.querySelectorAll('#navlinks a').forEach(function(a){
+  a.addEventListener('click',function(){nav.classList.remove('open');burger.setAttribute('aria-expanded','false')});
+});
+
+/* ---- reveal on scroll ---- */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+
+/* ---- room carousels ---- */
+document.querySelectorAll('[data-carousel]').forEach(function(c){
+  var track=c.querySelector('.track'),dots=c.querySelector('.dots'),cnt=c.querySelector('.cnt'),
+      n=track.children.length,i=0;
+  c.classList.toggle('single',n<2);
+  for(var k=0;k<n;k++){(function(k){
+    var b=document.createElement('button');
+    b.type='button';b.setAttribute('aria-label','第'+(k+1)+'張');
+    b.addEventListener('click',function(){go(k)});dots.appendChild(b);
+  })(k)}
+  function go(x){
+    i=(x+n)%n;
+    track.style.transform='translateX('+(-i*100)+'%)';
+    Array.prototype.forEach.call(dots.children,function(d,k){d.classList.toggle('on',k===i)});
+    if(cnt)cnt.textContent=(i+1)+' / '+n;
+  }
+  c.querySelector('.prev').addEventListener('click',function(){go(i-1)});
+  c.querySelector('.next').addEventListener('click',function(){go(i+1)});
+  var x0=null,y0=null;
+  c.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});
+  c.addEventListener('touchend',function(e){
+    if(x0===null)return;
+    var dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;
+    if(Math.abs(dx)>42&&Math.abs(dx)>Math.abs(dy))go(dx<0?i+1:i-1);
+    x0=null;
+  },{passive:true});
+  go(0);
+});
+
+/* ---- accordion ---- */
+document.querySelectorAll('.acc__q').forEach(function(btn){
+  var p=btn.nextElementSibling;
+  btn.addEventListener('click',function(){
+    var open=btn.getAttribute('aria-expanded')==='true';
+    document.querySelectorAll('.acc__q').forEach(function(b){b.setAttribute('aria-expanded','false');b.nextElementSibling.style.maxHeight=null});
+    if(!open){btn.setAttribute('aria-expanded','true');p.style.maxHeight=p.scrollHeight+'px'}
+  });
+});
+
+/* ---- lightbox ---- */
+(function(){
+  var lb=document.getElementById('lb'),img=document.getElementById('lbimg'),
+      cap=document.getElementById('lbcap'),sub=document.getElementById('lbsub'),
+      list=[],cur=0,lastFocus=null;
+  function collect(){list=Array.prototype.slice.call(document.querySelectorAll('img[data-lb]'))}
+  function show(k){
+    if(!list.length)return;
+    cur=(k+list.length)%list.length;
+    var el=list[cur];
+    img.src=el.currentSrc||el.src;
+    img.alt=el.alt||'';
+    cap.textContent=el.getAttribute('data-cap')||'';
+    sub.textContent=el.getAttribute('data-sub')||'';
+  }
+  function open(k){
+    lastFocus=document.activeElement;
+    show(k);lb.classList.add('on');document.body.classList.add('lock');
+    document.getElementById('lbx').focus();
+  }
+  function close(){
+    lb.classList.remove('on');document.body.classList.remove('lock');
+    img.removeAttribute('src');if(lastFocus&&lastFocus.focus)lastFocus.focus();
+  }
+  collect();
+  document.addEventListener('click',function(e){
+    var t=e.target.closest?e.target.closest('img[data-lb]'):null;
+    if(!t)return;
+    collect();
+    var k=list.indexOf(t);
+    if(k>-1){e.preventDefault();open(k)}
+  });
+  document.getElementById('lbx').addEventListener('click',close);
+  document.getElementById('lbp').addEventListener('click',function(){show(cur-1)});
+  document.getElementById('lbn').addEventListener('click',function(){show(cur+1)});
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('lb__fig'))close()});
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('on'))return;
+    if(e.key==='Escape')close();
+    else if(e.key==='ArrowLeft')show(cur-1);
+    else if(e.key==='ArrowRight')show(cur+1);
+  });
+  var sx=null;
+  lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+  lb.addEventListener('touchend',function(e){
+    if(sx===null)return;
+    var d=e.changedTouches[0].clientX-sx;
+    if(Math.abs(d)>50)show(d<0?cur+1:cur-1);
+    sx=null;
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
