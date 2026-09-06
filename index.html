@@ -304,16 +304,35 @@ h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:.02em;line-height:1.4}
 :focus-visible{outline:3px solid var(--wave);outline-offset:2px}
 /* 中文斷行：手機用 pretty，平板以上用 balance（讓斷點落在標點後，不留一兩字的尾巴）*/
 @media(min-width:480px){.lead,.floor__h p{text-wrap:balance}}
+
+/* ---------- 價格顯示開關 ----------------------------------------
+   目前狀態：隱藏所有價格與「房價」區塊。
+   要重新顯示 → 把下面 <body> 那行改成  <body class="show-price">
+   （.pz = 有價格的內容；.pz-alt = 隱藏時代替顯示的文字）
+------------------------------------------------------------------ */
+body:not(.show-price) .pz,
+body:not(.show-price) #rates{display:none}
+body.show-price .pz-alt{display:none}
+/* 房價區隱藏後，重新調整各區塊的深淺交錯 */
+body:not(.show-price) #grounds{background:var(--snow)}
+body:not(.show-price) #grounds .sec__eb{background:var(--sky)}
+body:not(.show-price) #around{background:var(--foam)}
+body:not(.show-price) #around .sec__eb{background:#fff}
+body:not(.show-price) #location{background:var(--snow)}
+body:not(.show-price) #location .sec__eb{background:var(--sky)}
+body:not(.show-price) #info{background:var(--foam)}
+body:not(.show-price) #info .sec__eb{background:#fff}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}.hero__bg img{opacity:1}}
 </style>
 </head>
+<!-- 要顯示價格請改成： <body class="show-price"> -->
 <body>
 <!-- ANALYTICS_HERE -->
 <header class="nav" id="nav">
   <a class="nav__brand" href="#top">樂活Villa</a>
   <nav><ul class="nav__links" id="navlinks">
     <li><a href="#about">關於</a></li><li><a href="#amenities">設施</a></li><li><a href="#spaces">空間</a></li>
-    <li><a href="#rooms">房型</a></li><li><a href="#rates">房價</a></li><li><a href="#grounds">園區</a></li>
+    <li><a href="#rooms">房型</a></li><li class="pz"><a href="#rates">房價</a></li><li><a href="#grounds">園區</a></li>
     <li><a href="#location">交通</a></li><li><a href="#info">訂房須知</a></li>
   </ul></nav>
   <button class="burger" id="burger" aria-label="開啟選單" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
@@ -333,7 +352,8 @@ h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:.02em;line-height:1.4}
     <p class="hero__tag">放慢步調 · 享受生活 · 輕鬆度假</p>
     <div class="hero__cta">
       <a class="btn btn--fill" href="https://line.me/R/ti/p/@042ssvpw">私訊訂房</a>
-      <a class="btn btn--glass" href="#rates">看房價</a>
+      <a class="btn btn--glass pz" href="#rates">看房價</a>
+      <a class="btn btn--glass pz-alt" href="#rooms">看房型</a>
     </div>
   </div>
   <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 42c180-34 340 22 520 22s300-46 470-46 270 40 450 30v32H0z"/></svg>
@@ -368,7 +388,7 @@ h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:.02em;line-height:1.4}
     <div class="amen">
       <div class="amen__i"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"/><path d="M19 11a7 7 0 0 1-14 0M12 18v3"/></svg></div><b>歡唱 KTV</b><span>大螢幕投影，客廳就是包廂</span></div>
       <div class="amen__i"><div class="ic"><svg viewBox="0 0 24 24"><path d="M2 16c1.8 0 1.8 1.4 3.6 1.4S7.4 16 9.2 16s1.8 1.4 3.6 1.4S14.6 16 16.4 16 18.2 17.4 20 17.4 21.8 16 22 16"/><path d="M2 20.5c1.8 0 1.8 1.4 3.6 1.4s1.8-1.4 3.6-1.4 1.8 1.4 3.6 1.4 1.8-1.4 3.6-1.4 1.8 1.4 3.6 1.4S21.8 20.5 22 20.5"/><path d="M8 13V4a2 2 0 1 1 4 0M16 13V4a2 2 0 1 1 4 0"/></svg></div><b>戶外戲水池</b><span>前後各一池，夏日消暑</span></div>
-      <div class="amen__i"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 15h16M6 15a6 6 0 0 1 12 0M6 19h12"/><path d="M9 7c0-1 1-1.4 1-2.4S9 3 9 3M13 7c0-1 1-1.4 1-2.4S13 3 13 3"/></svg></div><b>烤肉區</b><span>食材自備．押金 $2,000</span></div>
+      <div class="amen__i"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 15h16M6 15a6 6 0 0 1 12 0M6 19h12"/><path d="M9 7c0-1 1-1.4 1-2.4S9 3 9 3M13 7c0-1 1-1.4 1-2.4S13 3 13 3"/></svg></div><b>烤肉區</b><span class="pz">食材自備．押金 $2,000</span><span class="pz-alt">食材自備．需付場地押金</span></div>
       <div class="amen__i"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.1"/><circle cx="15" cy="14" r="1.1"/><path d="M3 12h18"/></svg></div><b>電動麻將</b><span>自動洗牌，戰到天亮</span></div>
       <div class="amen__i"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20V9h14v11"/><path d="M8 9V5a4 4 0 0 1 8 0v4M12 13v3"/></svg></div><b>寬敞廚房</b><span>開放式中島與長餐桌</span></div>
       <div class="amen__i"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12.5a10 10 0 0 1 14 0M8 15.8a5.6 5.6 0 0 1 8 0M2 9.2a15 15 0 0 1 20 0"/><circle cx="12" cy="19" r="1"/></svg></div><b>免費 Wi-Fi</b><span>全棟覆蓋</span></div>
@@ -456,7 +476,8 @@ h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:.02em;line-height:1.4}
           <h3>雙人房</h3>
           <p class="cap">2 人 · 主棟共 3 間</p>
           <ul><li>床型：一大床</li><li>衛浴：獨立衛浴．乾濕分離</li><li>備品：冷氣．冰箱．吹風機</li></ul>
-          <div class="prices"><span>平日 <b>$2,800</b></span><span>假日 <b>$3,300</b></span></div>
+          <div class="prices pz"><span>平日 <b>$2,800</b></span><span>假日 <b>$3,300</b></span></div>
+          <div class="prices pz-alt"><span>房價請洽詢</span></div>
           <a class="btn btn--out" href="https://line.me/R/ti/p/@042ssvpw" style="padding:11px 24px;font-size:14px">詢問空房</a>
         </div>
       </article>
@@ -483,7 +504,8 @@ h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:.02em;line-height:1.4}
           <h3>四人房</h3>
           <p class="cap">4 人 · 主棟共 3 間</p>
           <ul><li>床型：兩大床</li><li>衛浴：獨立衛浴．乾濕分離</li><li>部分房型附設沙發起居區</li></ul>
-          <div class="prices"><span>平日 <b>$4,800</b></span><span>假日 <b>$5,300</b></span></div>
+          <div class="prices pz"><span>平日 <b>$4,800</b></span><span>假日 <b>$5,300</b></span></div>
+          <div class="prices pz-alt"><span>房價請洽詢</span></div>
           <a class="btn btn--out" href="https://line.me/R/ti/p/@042ssvpw" style="padding:11px 24px;font-size:14px">詢問空房</a>
         </div>
       </article>
@@ -502,7 +524,8 @@ h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:.02em;line-height:1.4}
           <h3>獨棟雙人房</h3>
           <p class="cap">2 人 · 獨立小屋．不含於包棟</p>
           <ul><li>床型：一大床</li><li>衛浴：獨立衛浴</li><li>與主棟分離，安靜獨立</li></ul>
-          <div class="prices"><span><span class="tbd">價格請洽詢</span></span></div>
+          <div class="prices pz"><span><span class="tbd">價格請洽詢</span></span></div>
+          <div class="prices pz-alt"><span>房價請洽詢</span></div>
           <a class="btn btn--out" href="https://line.me/R/ti/p/@042ssvpw" style="padding:11px 24px;font-size:14px">詢問空房</a>
         </div>
       </article>
@@ -627,16 +650,19 @@ h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:.02em;line-height:1.4}
 
     <div class="acc">
       <div class="acc__w"><button class="acc__q" aria-expanded="false">訂金與付款 <i>＋</i></button><div class="acc__a"><div>
-        訂金依成交金額：<br>
+        <span class="pz">訂金依成交金額：<br>
         · $25,000 以上 → 訂金 $10,000<br>
-        · $25,000 以下 → 訂金 $5,000<br><br>
+        · $25,000 以下 → 訂金 $5,000<br><br></span>
+        <span class="pz-alt">訂金金額依訂房總額而定。<br><br></span>
         訂房確認後，我們會透過 LINE 提供匯款資訊。
       </div></div></div>
 
       <div class="acc__w"><button class="acc__q" aria-expanded="false">取消與延期 <i>＋</i></button><div class="acc__a"><div>
         <ul>
-          <li>取消預訂：訂金扣除 $5,000 作業手續費。</li>
-          <li>延期：訂金扣除 $2,000，僅接受一年內延期。</li>
+          <li class="pz">取消預訂：訂金扣除 $5,000 作業手續費。</li>
+          <li class="pz">延期：訂金扣除 $2,000，僅接受一年內延期。</li>
+          <li class="pz-alt">取消預訂：訂金將扣除作業手續費。</li>
+          <li class="pz-alt">延期：訂金將扣除手續費，僅接受一年內延期。</li>
           <li>退款若非同一銀行，將收取匯款手續費。</li>
         </ul>
       </div></div></div>
@@ -644,7 +670,8 @@ h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:.02em;line-height:1.4}
       <div class="acc__w"><button class="acc__q" aria-expanded="false">烤肉區使用規範 <i>＋</i></button><div class="acc__a"><div>
         <ul>
           <li>食材需自備，不提供代訂與代冰。</li>
-          <li>押金 $2,000，退房前完成清潔整理可全額退還。</li>
+          <li class="pz">押金 $2,000，退房前完成清潔整理可全額退還。</li>
+          <li class="pz-alt">須付場地押金，退房前完成清潔整理可全額退還。</li>
           <li>未整理則不退還押金。</li>
         </ul>
       </div></div></div>
@@ -662,7 +689,8 @@ h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:.02em;line-height:1.4}
       <div class="acc__w"><button class="acc__q" aria-expanded="false">加床與人數 <i>＋</i></button><div class="acc__a"><div>
         <ul>
           <li>主棟可住 18 人（雙人房 3 間、四人房 3 間）。</li>
-          <li>加床：僅提供單人床 1 張，$800／晚。</li>
+          <li class="pz">加床：僅提供單人床 1 張，$800／晚。</li>
+          <li class="pz-alt">加床：僅提供單人床 1 張，費用請洽詢。</li>
           <li>獨棟雙人房費用另計，不包含於包棟方案。</li>
         </ul>
       </div></div></div>
@@ -670,7 +698,8 @@ h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:.02em;line-height:1.4}
       <div class="acc__w"><button class="acc__q" aria-expanded="false">寵物規定 <i>＋</i></button><div class="acc__a"><div>
         <ul>
           <li>僅接受小型犬，上限 2 隻。</li>
-          <li>清潔費 $500／隻。</li>
+          <li class="pz">清潔費 $500／隻。</li>
+          <li class="pz-alt">須另收清潔費。</li>
           <li>寵物不可上床、不可上沙發。</li>
         </ul>
       </div></div></div>
