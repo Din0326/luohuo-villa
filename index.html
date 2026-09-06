@@ -135,9 +135,10 @@ h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:.02em;line-height:1.4}
 .amen__i span{font-size:13px;color:var(--grey)}
 @media(max-width:760px){.amen{grid-template-columns:repeat(2,1fr);gap:12px}.amen__i{padding:24px 12px}}
 
-.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
 .strip .tile{aspect-ratio:1}
-@media(max-width:860px){.strip{grid-template-columns:repeat(2,1fr);gap:10px}}
+@media(max-width:860px){.strip{grid-template-columns:repeat(2,1fr);gap:10px}
+  .strip .tile:last-child{grid-column:span 2;aspect-ratio:16/10}}
 
 /* ---------- FLOORS ---------- */
 .floor+.floor{margin-top:clamp(48px,6vw,78px)}
@@ -390,7 +391,6 @@ body.show-price .pz-alt{display:none}
       <figure class="tile"><img src="images/fun-ktv.jpg" alt="客廳大螢幕投影 KTV" loading="lazy" width="1500" height="1125" data-lb data-cap="歡唱 KTV" data-sub="客廳大螢幕投影，音響設備齊全"><figcaption>歡唱 KTV</figcaption></figure>
       <figure class="tile"><img src="images/fun-mahjong.jpg" alt="電動麻將桌" loading="lazy" width="1500" height="1125" data-lb data-cap="電動麻將桌" data-sub="自動洗牌，四人成局"><figcaption>電動麻將</figcaption></figure>
       <figure class="tile"><img src="images/fun-switch.jpg" alt="Nintendo Switch 遊戲與麥克風設備" loading="lazy" width="1500" height="1125" data-lb data-cap="Switch 遊戲" data-sub="大電視接 Switch，全家一起玩"><figcaption>Switch 遊戲</figcaption></figure>
-      <figure class="tile"><img src="images/fun-books.jpg" alt="窗邊書櫃與繪本閱讀角" loading="lazy" width="1125" height="1500" data-lb data-cap="圖書繪本角" data-sub="窗邊的沙發與書牆，孩子的秘密基地"><figcaption>圖書繪本角</figcaption></figure>
     </div>
   </div></div>
 </section>
